@@ -11,7 +11,7 @@ typedef struct __attribute__((packed)) {
 #define TEST(test_function)                                             \
     void test_function(void);                                           \
     __attribute__((section(".data.test_cases"), unused))                \
-    static test_case_t my_test_case = {                                 \
+    static test_case_t test_function##_case = {                                 \
         .test = test_function,                                          \
         .name = #test_function,                                         \
         .file_name = __FILE__                                           \
